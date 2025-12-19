@@ -1,0 +1,26 @@
+app: "MyApp"
+port: 8080
+server: struct {
+    host = "localhost",
+    workers = 4
+}
+dbport: 5432
+totalports: !(port + dbport)
+
+game: "SpaceShooter"
+players: 4
+settings: struct {
+    difficulty = "medium"
+}
+basescore: 1000
+bonusscore: 500
+totalscore: !(basescore + bonusscore)
+
+device: "Thermostat"
+sensors: 3
+config: struct {
+    temp = 22
+}
+checkinterval: 300
+errorcount: 7
+nextcheck: !(mod(errorcount, 3))
